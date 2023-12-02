@@ -4,11 +4,11 @@ fun main() {
     part2(input).println()
 }
 
-fun part1(input: List<String>) = input.sumOf { it.extractValue() }
+private fun part1(input: List<String>) = input.sumOf { it.extractValue() }
 
-fun part2(input: List<String>) = input.sumOf { it.calculateValue() }
+private fun part2(input: List<String>) = input.sumOf { it.calculateValue() }
 
-fun String.extractValue(): Int =
+private fun String.extractValue(): Int =
     (find {it.isDigit()}?.digitToInt() ?:0) * 10 + (findLast { it.isDigit() }?.digitToInt() ?: 0)
 
 private val textToDigit = mapOf(
